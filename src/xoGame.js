@@ -50,7 +50,7 @@ function XOGame() {
   };
 
   const calculateBotMove = (board) => {
-    fetch('http://localhost:5000/api/move', {
+    fetch(`${process.env.REACT_APP_BACKEND_HOST}/api/move`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ board: board, player: 'O' }),

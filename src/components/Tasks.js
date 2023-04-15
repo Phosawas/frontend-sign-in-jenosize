@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 export default function Tasks({ token }) {
   const [tasks, setTasks] = useState([])
   const fetchData = async (token) => {
-    const response = await axios.get('http://localhost:5000/api/tasks', {
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/tasks`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
